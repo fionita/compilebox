@@ -35,8 +35,8 @@ RUN apt-get install -y software-properties-common
 #grab oracle java (auto accept licence)
 RUN add-apt-repository -y ppa:webupd8team/java
 RUN apt-get update
-echo debconf shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
-echo debconf shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections
+RUN echo debconf shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
+RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections
 RUN apt-get -y install oracle-java7-installer 
 
 

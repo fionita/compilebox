@@ -38,7 +38,9 @@ RUN apt-get update
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | /usr/bin/debconf-set-selections
 RUN apt-get -y --force-yes install oracle-java7-installer
-
+#daca nu se instaleaza - instalare manuala
+#docker run -it virutal_machine /bin/bash
+#docker commit ...
 
 RUN apt-get install -y gobjc
 RUN apt-get install -y gnustep-devel &&  sed -i 's/#define BASE_NATIVE_OBJC_EXCEPTIONS     1/#define BASE_NATIVE_OBJC_EXCEPTIONS     0/g' /usr/include/GNUstep/GNUstepBase/GSConfig.h
